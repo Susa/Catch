@@ -68,7 +68,7 @@ with expansion:
   0 == 1
 ```
 
-Note that we get the actual return value of Factorial(0) printed for us (0) - even though we used a natural expression with the == operator. That let's us immediately see what the problem is.
+Note that we get the actual return value of Factorial(0) printed for us (0) - even though we used a natural expression with the == operator. That lets us immediately see what the problem is.
 
 Let's change the factorial function to:
 
@@ -80,7 +80,7 @@ unsigned int Factorial( unsigned int number ) {
 
 Now all the tests pass.
 
-Of course there are still more issues to do deal with. For example we'll hit problems when the return value starts to exceed the range of an unsigned int. With factorials that can happen quite quickly. You might want to add tests for such cases and decide how to handle them. We'll stop short of doing that here.
+Of course there are still more issues to deal with. For example we'll hit problems when the return value starts to exceed the range of an unsigned int. With factorials that can happen quite quickly. You might want to add tests for such cases and decide how to handle them. We'll stop short of doing that here.
 
 ## What did we do here?
 
@@ -233,7 +233,7 @@ The requirement is that the following block of code ([or equivalent](own-main.md
 
 appears in _exactly one_ source file. Use as many additional cpp files (or whatever you call your implementation files) as you need for your tests, partitioned however makes most sense for your way of working. Each additional file need only ```#include "catch.hpp"``` - do not repeat the ```#define```!
 
-In fact it is usually a good idea to put the block with the ```#define``` [in it's own source file](slow-compiles.md).
+In fact it is usually a good idea to put the block with the ```#define``` [in its own source file](slow-compiles.md).
 
 Do not write your tests in header files!
 
