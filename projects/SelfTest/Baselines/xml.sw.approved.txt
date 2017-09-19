@@ -12,7 +12,7 @@
         <Exception filename="projects/<exe-name>/ExceptionTests.cpp" >
           expected exception
         </Exception>
-        <OverallResults successes="0" failures="1" expectedFailures="0"/>
+        <OverallResults successes="0" failures="0" expectedFailures="1"/>
       </Section>
       <Section name="inside REQUIRE_NOTHROW" filename="projects/<exe-name>/ExceptionTests.cpp" >
         <Info>
@@ -29,7 +29,7 @@
             expected exception
           </Exception>
         </Expression>
-        <OverallResults successes="0" failures="1" expectedFailures="0"/>
+        <OverallResults successes="0" failures="0" expectedFailures="1"/>
       </Section>
       <Section name="inside REQUIRE_THROWS" filename="projects/<exe-name>/ExceptionTests.cpp" >
         <Info>
@@ -134,6 +134,24 @@
           1 == 1
         </Expanded>
       </Expression>
+      <OverallResult success="true"/>
+    </TestCase>
+    <TestCase name="#961 -- Dynamically created sections should all be reported" tags="[.][hide]" filename="projects/<exe-name>/MiscTests.cpp" >
+      <Section name="Looped section 0" filename="projects/<exe-name>/MiscTests.cpp" >
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Looped section 1" filename="projects/<exe-name>/MiscTests.cpp" >
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Looped section 2" filename="projects/<exe-name>/MiscTests.cpp" >
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Looped section 3" filename="projects/<exe-name>/MiscTests.cpp" >
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Looped section 4" filename="projects/<exe-name>/MiscTests.cpp" >
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
       <OverallResult success="true"/>
     </TestCase>
     <TestCase name="'Not' checks that should fail" tags="[.][failing][hide]" filename="projects/<exe-name>/ConditionTests.cpp" >
@@ -7309,6 +7327,24 @@ A string sent directly to stderr
       </Expression>
       <OverallResult success="true"/>
     </TestCase>
+    <TestCase name="Standard error is reported and redirected" tags="[.][hide][messages]" filename="projects/<exe-name>/MessageTests.cpp" >
+      <Section name="std::cerr" filename="projects/<exe-name>/MessageTests.cpp" >
+        <OverallResults successes="0" failures="1" expectedFailures="0"/>
+      </Section>
+      <Section name="std::clog" filename="projects/<exe-name>/MessageTests.cpp" >
+        <OverallResults successes="0" failures="1" expectedFailures="0"/>
+      </Section>
+      <Section name="Interleaved writes to cerr and clog" filename="projects/<exe-name>/MessageTests.cpp" >
+        <OverallResults successes="0" failures="1" expectedFailures="0"/>
+      </Section>
+      <OverallResult success="false">
+        <StdErr>
+Write to std::cerr
+Write to std::clog
+Interleaved writes to error streams
+        </StdErr>
+      </OverallResult>
+    </TestCase>
     <TestCase name="Standard output from all sections is reported" tags="[.][hide][messages]" filename="projects/<exe-name>/MessageTests.cpp" >
       <Section name="one" filename="projects/<exe-name>/MessageTests.cpp" >
         <OverallResults successes="0" failures="1" expectedFailures="0"/>
@@ -10143,7 +10179,7 @@ spanner      <OverallResult success="true"/>
       </Section>
       <OverallResult success="true"/>
     </TestCase>
-    <OverallResults successes="859" failures="91" expectedFailures="21"/>
+    <OverallResults successes="864" failures="94" expectedFailures="21"/>
   </Group>
-  <OverallResults successes="859" failures="90" expectedFailures="21"/>
+  <OverallResults successes="864" failures="93" expectedFailures="21"/>
 </Catch>
